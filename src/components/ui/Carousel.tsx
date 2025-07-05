@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef, useCallback } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
 interface CarouselProps {
@@ -13,9 +13,9 @@ const Carousel: React.FC<CarouselProps> = ({
   const [currentSlide, setCurrentSlide] = useState(0);
   const autoPlayRef = useRef<NodeJS.Timeout | null>(null);
 
-  const nextSlide = () => {
+  const nextSlide = useCallback(() => {
     setCurrentSlide((prev) => (prev === children.length - 1 ? 0 : prev + 1));
-  };
+  }, [children.length]);
 
   const prevSlide = () => {
     setCurrentSlide((prev) => (prev === 0 ? children.length - 1 : prev - 1));
@@ -33,7 +33,7 @@ const Carousel: React.FC<CarouselProps> = ({
         clearInterval(autoPlayRef.current);
       }
     };
-  }, [autoPlayInterval, currentSlide]);
+  }, [autoPlayInterval, nextSlide]);
 
   return (
     <div className="relative">

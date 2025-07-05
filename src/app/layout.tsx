@@ -1,23 +1,7 @@
 import type { Metadata, Viewport } from "next";
-import { Nanum_Gothic, Roboto } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
-
-// 한글 폰트 - 나눔고딕
-const nanumGothic = Nanum_Gothic({
-  weight: ["400", "700", "800"],
-  subsets: ["latin"],
-  variable: "--font-nanum-gothic",
-});
-
-// 영어 폰트 - Roboto
-const roboto = Roboto({
-  weight: ["300", "400", "700"],
-  style: ["normal", "italic"],
-  subsets: ["latin"],
-  variable: "--font-roboto",
-});
 
 // viewport 설정 추가
 export const viewport: Viewport = {

@@ -76,7 +76,6 @@ const NewReleases: React.FC<NewReleasesProps> = ({ albums }) => {
             style={{ perspective: "1000px" }}
           >
             {visibleAlbums.map(({ album, position }, index) => {
-              // 더 세련된 3D 배치
               const scale =
                 position === 0
                   ? 1.2

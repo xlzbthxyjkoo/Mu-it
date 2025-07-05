@@ -1,6 +1,5 @@
 import React from "react";
 import Image from "next/image";
-import Link from "next/link";
 
 // 출시 예정 앨범 타입
 interface UpcomingAlbum {
